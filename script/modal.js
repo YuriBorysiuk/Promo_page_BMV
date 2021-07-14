@@ -1,4 +1,4 @@
-const moreElem = document.querySelector('.more')
+const moreElems = document.querySelectorAll('.more')
 const modalElem = document.querySelector('.modal')
 
 const openModal = () => {
@@ -11,7 +11,10 @@ const closeModal = () => {
 	enableScroll()
 }
 
-moreElem.addEventListener('click', openModal)
+moreElems.forEach(moreElem => {
+	moreElem.addEventListener('click', openModal)
+})
+
 modalElem.addEventListener('click', (event) => {
 	console.log(event.target)
 	const target = event.target
